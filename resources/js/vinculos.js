@@ -1,12 +1,12 @@
 function confirmarBorrar(nombre, id) {
 	if (confirm("¿Quieres eliminar el siguiente producto:  " + nombre + "?")) {
-		window.location="{{URL::to('/productos')}}"; + id;
+		window.location="/TFC/public/admin/productos/destroy/"+id;
 	}
 }
 
-function confirmarAñadir(nombre, id) {
-	if (confirm("¿Quieres añadir el siguiente producto:  " + nombre + "?")) {
-        window.location = "/TFC/public/admin/productos/create";// + id
+function confirmarAñadir() {
+	if (confirm("¿Quieres añadir un nuevo producto?")) {
+        window.location = "/TFC/public/admin/productos/create";
 	}
 }
 

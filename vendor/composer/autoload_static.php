@@ -463,7 +463,8 @@ class ComposerStaticInit9df849b0896be4a3691342638eae38f7
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\AdminUsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminUsersController.php',
+        'App\\Foto' => __DIR__ . '/../..' . '/app/Foto.php',
+        'App\\Http\\Controllers\\AdminProductosController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminProductosController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -473,7 +474,7 @@ class ComposerStaticInit9df849b0896be4a3691342638eae38f7
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Productos' => __DIR__ . '/../..' . '/app/Productos.php',
+        'App\\Producto' => __DIR__ . '/../..' . '/app/Producto.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

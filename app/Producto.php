@@ -11,11 +11,17 @@ class Producto extends Model
         'Categoria',
         'Precio',
         'Descripcion',
-        'Stock'
+        'Stock',
+        'foto_id'
 
     ];
     public function producto()
     {
 return $this->belongsTo("App\Producto");
+    }
+
+    public function foto()
+    {
+return $this->belongsTo("App\Foto");
     }
 }

@@ -34,13 +34,15 @@
 <td class="tabla">{{$producto->Stock}}</td>
 <td class="tabla">{{$producto->created_at}}</td>
 <td class="tabla">{{$producto->updated_at}}</td>
-<td class="tabla" id="añadir"  onclick="confirmarAñadir('{{$producto->Nombre}}',{{$producto->id}});"><button>Añadir</button></td>
+<td><img src="../images/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> </td>
 <td class="tabla" id="editar"  onclick="confirmarEditar('{{$producto->Nombre}}',{{$producto->id}});"><button>Editar</button></td>
 <td class="tabla" id="eliminar"  onclick="confirmarBorrar('{{$producto->Nombre}}',{{$producto->id}});"><button>Eliminar</button></td>
 </tr>
 
 @endforeach
+
 </table>
+<button class="tabla" id="añadir"  onclick="confirmarAñadir();">Añadir</button>
 
 </body>
 </html>

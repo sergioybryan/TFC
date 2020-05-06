@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Producto;
+use App\Foto;
 
 class AdminProductosController extends Controller
 {
@@ -38,7 +39,18 @@ class AdminProductosController extends Controller
     public function store(Request $request)
     {
         //return $request->all();
-        Producto::create($request->all());
+        //Producto::create($request->all());
+
+        $tabla=$request->all();
+        if ($archivo=$request->file("foto_id")){
+
+            $nombre= $archivo->getClientOriginalName();
+            echo $nombre;
+            $archivo->move("images",$nombre);
+            $foto=Foto::create(["ruta_foto"=>$nombre]);
+            $tabla["foto_id"]=$foto->id;
+        }
+        Producto::create($tabla);
         /*$inicio = AdminProductosController::index();
         return $inicio;
     */
@@ -96,6 +108,6 @@ class AdminProductosController extends Controller
      */
     public function destroy($id)
     {
-        return view('admin.productos.destroy');
+        return view('admin.productos.index');
     }
 }

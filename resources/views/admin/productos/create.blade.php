@@ -7,7 +7,7 @@
 <body>
 <h1>Agregar productos</h1>
 
-{!! Form::open(['method' => 'POST', 'action'=>'AdminProductosController@store']) !!}
+{!! Form::open(['method' => 'POST', 'action'=>'AdminProductosController@store',"files"=>true]) !!}
     
     {!! Form::label('Nombre', 'Nombre:') !!}
     {!!Form::text('Nombre')!!}
@@ -27,6 +27,10 @@
 
     {!! Form::label('Stock', 'Stock:') !!}
     {!!Form::number('Stock','0')!!}
+    <br>
+
+    {!! Form::label('Foto', 'Foto:') !!}
+    {!!Form::file('foto_id')!!}
     <br>
 
     {!! Form::submit('Agregar') !!}
