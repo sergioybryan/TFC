@@ -29,12 +29,12 @@
 <td class="tabla">{{$producto->id}};</td>
 <td class="tabla">{{$producto->Nombre}}</td>
 <td class="tabla">{{$producto->Categoria}}</td>
-<td class="tabla">{{$producto->Precio}}</td>
+<td class="tabla">{{$producto->Precio}}€</td>
 <td class="tabla">{{$producto->Descripcion}}</td>
 <td class="tabla">{{$producto->Stock}}</td>
 <td class="tabla">{{$producto->created_at}}</td>
 <td class="tabla">{{$producto->updated_at}}</td>
-<td><img src="../images/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> </td>
+<td><img src="../images/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> </td> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
 <td class="tabla" id="editar"  onclick="confirmarEditar('{{$producto->Nombre}}',{{$producto->id}});"><button>Editar</button></td>
 <td class="tabla" id="eliminar"  onclick="confirmarBorrar('{{$producto->Nombre}}',{{$producto->id}});"><button>Eliminar</button></td>
 </tr>

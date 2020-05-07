@@ -45,12 +45,11 @@ class AdminProductosController extends Controller
         if ($archivo=$request->file("foto_id")){
 
             $nombre= $archivo->getClientOriginalName();
-            echo $nombre;
             $archivo->move("images",$nombre);
-            $foto=Foto::create(["ruta_foto"=>$nombre]);
-            $tabla["foto_id"]=$foto->id;
+            $foto=Foto::create(["ruta_foto"=>$nombre]); //creo una ruta de la foto
+            $tabla["foto_id"]=$foto->id; // creo un nuevo campo-> foto_id para almacenarlos en productos.
         }
-        Producto::create($tabla);
+        Producto::create($tabla);//creamos el nuevo producto
         /*$inicio = AdminProductosController::index();
         return $inicio;
     */
@@ -94,6 +93,15 @@ class AdminProductosController extends Controller
         $newP->Categoria=$request->input('Categoria');
         $newP->Precio=$request->input('Precio');
         $newP->Descripcion=$request->input('Descripcion');
+        if ($archivo=$request->file("foto_id")){ //si hay foto
+
+            $nombre= $archivo->getClientOriginalName(); //obtengo el nombre
+            $archivo->move("images",$nombre);//creo una nueva en la carpeta imagenes
+            $foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
+            $foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
+            $foto->save();// guardo
+        }
+        
         $newP->save(); //guardo
 
         return redirect('/admin/productos'); //envia a la pagina del admi

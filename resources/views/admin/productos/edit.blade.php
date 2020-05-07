@@ -2,15 +2,19 @@
 
 ?>
 <html>
-<head></head>
+<head>
+
+   <script type="text/javascript" src="../../../../resources/js/vinculos.js"></script>
+
+</head>
 
 <body>
 <h1>Editar productos</h1>
 <table>
-{!! Form::open(['method' => 'POST', 'action'=>['AdminProductosController@update',$id]]) !!}
+{!! Form::open(['method' => 'POST', 'action'=>['AdminProductosController@update',$id],"files"=>true]) !!}
 @foreach($Productos as $producto)
 
- @if ($producto->id==$id)
+ @if ($producto->id==$id)<!-- por cada producto, compruebo si el id coincide con el id pasado como parametro. -->
  <tr>
     <td class="tabla">{{ Form::label('Nombre', 'Nombre:') }}
         {{Form::text('Nombre',$producto->Nombre)}}</td>
@@ -32,19 +36,28 @@
         {{Form::text('Descripcion',$producto->Descripcion)}}</td>
  </tr>
 
+ <tr>
+   <td class="tabla">{{ Form::label('Foto', 'Foto:') }}
+      <img src="../../../images/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
+      {!!Form::file('foto_id')!!}</td>
+</tr>
+
  @endif
 
 
 @endforeach
 <tr>
+   <td>
     {{Form::hidden('_method',"PUT") }}
-    {{Form::submit('Agregar') }}
+    {{Form::submit('Actualizar') }}
         {{Form::reset('Borrar') }}
-     </tr>
+   </td>
+      </tr>
 {!! Form::close() !!}
 </table>
 
-    
+<button class="tabla" id="atras"  onclick="confirmarVolver()">Atras</button>
+
 
 
 </body>

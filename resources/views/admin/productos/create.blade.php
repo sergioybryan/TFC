@@ -2,7 +2,11 @@
 
 ?>
 <html>
-<head></head>
+<head>
+
+    <script type="text/javascript" src="../../../resources/js/vinculos.js"></script>
+
+</head>
 
 <body>
 <h1>Agregar productos</h1>
@@ -37,5 +41,7 @@
     {!! Form::reset('Borrar') !!}
 
 {!! Form::close() !!}
+<button class="tabla" id="atras"  onclick="confirmarVolver();">Volver</button>
+
 </body>
 </html>
