@@ -1,6 +1,6 @@
 function confirmarBorrar(nombre, id) {
-	if (confirm("¿Quieres eliminar el siguiente producto:  " + nombre + "?")) {
-		window.location="/TFC/public/admin/productos/destroy/"+id;
+	if (confirm("¿Quieres eliminar el siguiente producto: " + nombre + "?")) {
+		window.location="/TFC/public/admin/productos/destroy/"+id+"/"+nombre;
 	}
 }
 
@@ -18,6 +18,12 @@ function confirmarEditar(nombre, id) {
 
 function confirmarVolver() {
 	if (confirm("¿Quieres volver a la pagina anterior?")) {
+        window.location = "/TFC/public/admin/productos";// 
+	}
+}
+
+function confirmarCancelar() {
+	if (confirm("¿Quieres cancelar?")) {
         window.location = "/TFC/public/admin/productos";// 
 	}
 }

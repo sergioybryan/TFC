@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Producto;
 use App\Foto;
 
+
 class AdminProductosController extends Controller
 {
     /**
@@ -95,11 +96,20 @@ class AdminProductosController extends Controller
         $newP->Descripcion=$request->input('Descripcion');
         if ($archivo=$request->file("foto_id")){ //si hay foto
 
+              //borro la foto antigua de la carpeta imagenes
+            if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
+                $image_path = public_path().'/images/'.$nombre;// public path, nos da la ruta de  public
+                unlink($image_path);//elimino
+            }
+
+            //guardo una nueva imagen en la carpeta imagen
             $nombre= $archivo->getClientOriginalName(); //obtengo el nombre
             $archivo->move("images",$nombre);//creo una nueva en la carpeta imagenes
             $foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
             $foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
             $foto->save();// guardo
+
+          
         }
         
         $newP->save(); //guardo
@@ -114,8 +124,31 @@ class AdminProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function confirmDestroy($id,$nombre)
+    {
+        
+        $producto=Producto::find($id);
+        return view('admin.productos.destroy',compact('id','nombre','producto')); //le paso a la ruta al id
+      
+
+        }
+    
+
     public function destroy($id)
     {
-        return view('admin.productos.index');
-    }
+        
+        $borrar = Producto::find($id); //buscamos el id a borrar
+        if($nombre= $borrar->foto->ruta_foto){ //si el producto tiene ruta de foto
+            $image_path = public_path().'/images/'.$nombre;// public path, nos da la ruta de  public
+            unlink($image_path);
+        }
+        $borrar->delete();// lo borramos
+
+        // Tras esto redireccionamos
+        //Session::flash('message', 'Exito al borrar');
+        return redirect('/admin/productos'); //envia a la pagina del admi (usando la ruta)
+      
+
+        }
+    
 }

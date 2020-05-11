@@ -20,3 +20,5 @@ Route::get('/', function () {
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('admin/productos', 'AdminProductosController');
+
+Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
