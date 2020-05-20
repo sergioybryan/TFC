@@ -23,5 +23,12 @@ Route::resource('admin/productos', 'AdminProductosController');
 
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
 
-Route::get('/admin/productos/categoria/{categoria}', 'AdminProductosController@categoria');
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+/*Route::get('/passwords/mail', 'ForgotPasswordController@sendResetLinkEmail');*/
+
+Route::get('/passwords/email', function () {
+    return view('email');
+});
