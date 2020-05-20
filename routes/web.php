@@ -22,3 +22,6 @@ Route::get('/', function () {
 Route::resource('admin/productos', 'AdminProductosController');
 
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
+
+Route::get('/admin/productos/categoria/{categoria}', 'AdminProductosController@categoria');
+

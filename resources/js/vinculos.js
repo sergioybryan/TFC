@@ -27,3 +27,28 @@ function confirmarCancelar() {
         window.location = "/TFC/public/admin/productos";// 
 	}
 }
+
+function mostrarCategorias($c) {
+	switch($c) {
+		case 'V':
+			window.location = "/TFC/public/admin/productos/categoria/"+$c;// 
+
+		  break;
+		case "I":
+			window.location = "/TFC/public/admin/productos/categoria/"+$c;// 
+		  break;
+		case "E":
+			window.location = "/TFC/public/admin/productos/categoria/"+$c;// 
+		  break;
+		
+		case "H":
+			window.location = "/TFC/public/admin/productos/categoria/"+$c;// 
+		  break;
+		case "T":
+			window.location = "/TFC/public/admin/productos/categoria/"+$c;// 
+		  break;
+		
+		default:
+		  alert("No existe la categoria seleccionada");
+	  }
+}
