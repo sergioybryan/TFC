@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -37299,3 +37300,6 @@ module.exports = __webpack_require__(/*! C:\xampp\htdocs\TFC\resources\sass\app.
 /***/ })
 
 /******/ });
+=======
+require('./bootstrap');
+>>>>>>> 21d6603aa3f161bbdb82a1ffd6944d1ee8541aea

@@ -26,3 +26,12 @@ Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@c
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+=======
+
+/*Route::get('/passwords/mail', 'ForgotPasswordController@sendResetLinkEmail');*/
+
+Route::get('/passwords/email', function () {
+    return view('email');
+});
+>>>>>>> 21d6603aa3f161bbdb82a1ffd6944d1ee8541aea

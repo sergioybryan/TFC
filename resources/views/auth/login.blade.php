@@ -130,7 +130,11 @@
 									</button>
 
 									@if (Route::has('password.request'))
+<<<<<<< HEAD
 										<a class="btn btn-primary" href="{{ route('password.request') }}">
+=======
+										<a class="btn btn-primary" href="{{ Route::view('/passwords/email') }}">
+>>>>>>> 21d6603aa3f161bbdb82a1ffd6944d1ee8541aea
 											{{ __('Olvidé mi contraseña') }}
 										</a>
 									@endif
