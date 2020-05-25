@@ -18,7 +18,9 @@
     <br>
 
     {!! Form::label('Categoria', 'Categoria:') !!}
-    {!!Form::text('Categoria')!!}
+    {!!Form::select('Categoria', ['E' => 'Electronica', 'I' => 'Informatica', 'V' => 'Videojuegos', 'T' => 'Telefonia', 'H' => 'Hogar'], null, ['placeholder' => 'Elige la categoria'])!!}
+
+
     <br>
 
     {!! Form::label('Precio', 'Precio:') !!}

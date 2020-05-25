@@ -29,4 +29,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /*Route::get('/passwords/mail', 'ForgotPasswordController@sendResetLinkEmail');*/
 
+<<<<<<< HEAD
 
+=======
+Route::get('/passwords/email', function () {
+    return view('email');
+});
+>>>>>>> prueba

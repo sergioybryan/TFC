@@ -23,7 +23,7 @@
 
  <tr>
     <td class="tabla">   {{Form::label('Categoria', 'Categoria:')}}
-        {{Form::text('Categoria',$producto->Categoria)}}</td>
+      {{Form::select('Categoria', ['E' => 'Electronica', 'I' => 'Informatica', 'V' => 'Videojuegos', 'T' => 'Telefonia', 'H' => 'Hogar'],$producto->Categoria)}}</td>
  </tr>
  
  <tr>

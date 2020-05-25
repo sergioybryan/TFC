@@ -44,5 +44,13 @@
 </table>
 <button class="tabla" id="añadir"  onclick="confirmarAñadir();">Añadir</button>
 
+
+<h3>Categorias</h3>
+<p><a href='#' onclick="mostrarCategorias('E')">Electronica</a></p>
+<p><a href='#' onclick="mostrarCategorias('V')">Videojuegos</a></p>
+<p><a href='#' onclick="mostrarCategorias('I')">Informatica</a></p>
+<p><a href='#' onclick="mostrarCategorias('T')">Telefonia</a></p>
+<p><a href='#' onclick="mostrarCategorias('H')">Hogar</a></p>
+
 </body>
 </html>

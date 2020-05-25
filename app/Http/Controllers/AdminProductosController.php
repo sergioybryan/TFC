@@ -150,5 +150,15 @@ class AdminProductosController extends Controller
       
 
         }
+       
+        public function categoria($c)
+    {
+        
+        $lista = Producto::all(); //buscamos el id a borrar
+       
+        return view('admin.productos.categoria',compact('lista','c')); //le paso a la ruta al id
+      
+
+        }
     
 }
