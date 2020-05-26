@@ -46,7 +46,7 @@ class AdminProductosController extends Controller
         if ($archivo=$request->file("foto_id")){
 
             $nombre= $archivo->getClientOriginalName();
-            $archivo->move("images",$nombre);
+            $archivo->move("images/images_product/",$nombre);
             $foto=Foto::create(["ruta_foto"=>$nombre]); //creo una ruta de la foto
             $tabla["foto_id"]=$foto->id; // creo un nuevo campo-> foto_id para almacenarlos en productos.
         }
@@ -98,13 +98,13 @@ class AdminProductosController extends Controller
 
               //borro la foto antigua de la carpeta imagenes
             if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
-                $image_path = public_path().'/images/'.$nombre;// public path, nos da la ruta de  public
+                $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
                 unlink($image_path);//elimino
             }
 
             //guardo una nueva imagen en la carpeta imagen
             $nombre= $archivo->getClientOriginalName(); //obtengo el nombre
-            $archivo->move("images",$nombre);//creo una nueva en la carpeta imagenes
+            $archivo->move("images/images_product/",$nombre);//creo una nueva en la carpeta imagenes
             $foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
             $foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
             $foto->save();// guardo
@@ -139,7 +139,7 @@ class AdminProductosController extends Controller
         
         $borrar = Producto::find($id); //buscamos el id a borrar
         if($nombre= $borrar->foto->ruta_foto){ //si el producto tiene ruta de foto
-            $image_path = public_path().'/images/'.$nombre;// public path, nos da la ruta de  public
+            $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
             unlink($image_path);
         }
         $borrar->delete();// lo borramos

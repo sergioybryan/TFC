@@ -6,6 +6,8 @@
 		<title>Administrador</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<script src="https://kit.fontawesome.com/bf5b664e76.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../../resources/js/vinculos.js"></script>
+
 		<style>
 			@font-face{
 				font-family: "logo";
@@ -83,18 +85,20 @@
 			</div>
 		</div>
 		
-			<div class=" row align-items-center justify-content-center">	
-				<div class="col-md-10 pt-3 pb-3 mt-5 mb-5 formu bg-dark col-lg-6">
-                    <table>
+			<div class=" row align-items-center justify-content-center ">	
+				<div class="col-md-10 pt-3 pb-3 mt-5 mb-5 formu cabecera rounded col-lg-6">
+                    <table class="table text-light text-center">
                         <tr class="tabla">
-                        <th class="tabla">ID</th>
+                        <th scope="col">ID</th>
                         <th class="tabla">Nombre</th>
                         <th class="tabla">Categoria</th>
                         <th class="tabla">Precio</th>
                         <th class="tabla">Descripcion</th>
                         <th class="tabla">Stock</th>
                         <th class="tabla">Creado</th>
-                        <th class="tabla">Actualizado</th>
+						<th class="tabla">Actualizado</th>
+						<th class="tabla">Foto</th>
+						<th class="tabla" colspan="2" >Accion</th>
                         </tr>
                         @foreach($Productos as $producto)
                         
@@ -107,15 +111,15 @@
                         <td class="tabla">{{$producto->Stock}}</td>
                         <td class="tabla">{{$producto->created_at}}</td>
                         <td class="tabla">{{$producto->updated_at}}</td>
-                        <td><img src="../images/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> </td> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
-                        <td class="tabla" id="editar"  onclick="confirmarEditar('{{$producto->Nombre}}',{{$producto->id}});"><button>Editar</button></td>
-                        <td class="tabla" id="eliminar"  onclick="confirmarBorrar('{{$producto->Nombre}}',{{$producto->id}});"><button>Eliminar</button></td>
-                        </tr>
+                        <td><img src="../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> </td> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
+                        <td class="tabla" id="editar"  onclick="confirmarEditar('{{$producto->Nombre}}',{{$producto->id}});"><button class="btn btn-warning btn-sm">Editar</button></td>
+                        <td class="tabla" id="eliminar"  onclick="confirmarBorrar('{{$producto->Nombre}}',{{$producto->id}});"><button class="btn btn-danger btn-sm">Eliminar</button></td>
+                        
                         
                         @endforeach
                         
                         </table>
-                        <button class="tabla" id="añadir"  onclick="confirmarAñadir();">Añadir</button>
+                        <button class="tabla btn btn-primary btn-sm" id="añadir"  onclick="confirmarAñadir();" >Añadir</button>
                         
 					</div>
 				</div>

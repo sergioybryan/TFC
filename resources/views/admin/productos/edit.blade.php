@@ -38,7 +38,7 @@
 
  <tr>
    <td class="tabla">{{ Form::label('Foto', 'Foto:') }}
-      <img src="../../../images/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
+      <img src="../../../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
       {!!Form::file('foto_id')!!}</td>
 </tr>
 

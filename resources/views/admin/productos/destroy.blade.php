@@ -13,7 +13,7 @@
 <p>{{$nombre}}</p>
 
 <p>
-    <img src="../../../../images/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100">
+    <img src="../../../../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100">
 </p>
 
 <p>
