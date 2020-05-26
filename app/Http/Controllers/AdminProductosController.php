@@ -18,7 +18,7 @@ class AdminProductosController extends Controller
     public static function index()
     {
         $Productos=Producto::all();
-        return view('admin.productos.index', compact('Productos'));
+        return view('admin.productos.index2', compact('Productos'));
     }
 
     /**
