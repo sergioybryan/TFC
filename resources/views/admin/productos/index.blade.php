@@ -23,7 +23,7 @@
 <th class="tabla">Creado:</th>
 <th class="tabla">Actualizado:</th>
 </tr>
-@foreach($Productos as $producto)
+@foreach($Productos ?? '' as $producto)
 
 <tr>
 <td class="tabla">{{$producto->id}};</td>

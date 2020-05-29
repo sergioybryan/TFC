@@ -14,11 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	
+/*	if (Auth::check()){*/
+		$user=Auth::user();
+		//echo $user;
+		if ($user->rol_id==2){
+			return view ('/home');
+		} else return view ('/admin/productos/index2'); //esta rutaa esta fallandoooooo
+	/*}*/
+	/*if (Auth::check()){
+        if ($user->esAdmin()){
+            echo "Eres usuario administrador.";
+		} else
+            echo "Eres estudiante.";
+		
+	}*/
+	return view('welcome');
 });
 
 
-
+ 
 Route::resource('admin/productos', 'AdminProductosController');
 
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');

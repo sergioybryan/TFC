@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Role;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -38,9 +40,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    // Rol de los usuarios.
+   
     public function role(){
-        return $this->belongTo('App\Role');
+        return $this->belongsTo('App\Role');
         
     }
+	
+	public function esAdmin(){
+		
+		if($this->role->nombre=='Administrador'){
+			return true;
+		} 
+		return false;
+		
+	}
 }
