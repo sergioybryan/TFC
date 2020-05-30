@@ -86,7 +86,7 @@
 		</div>
 		
 			<div class=" row align-items-center justify-content-center ">	
-				<div class="col-md-10 pt-3 pb-3 mt-5 mb-5 formu cabecera rounded col-lg-6">
+				<div class="col-md-12 pt-3 pb-3 mt-5 mb-5 formu cabecera rounded col-lg-7">
                     <table class="table text-light text-center">
                         <tr class="tabla">
                         <th scope="col">ID</th>

@@ -128,7 +128,7 @@ class AdminProductosController extends Controller
     {
         
         $producto=Producto::find($id);
-        return view('admin.productos.destroy',compact('id','nombre','producto')); //le paso a la ruta al id
+        return view('admin.productos.destroy',compact('id','nombre','producto')); //le paso a la ruta la info
       
 
         }
@@ -141,7 +141,11 @@ class AdminProductosController extends Controller
         if($nombre= $borrar->foto->ruta_foto){ //si el producto tiene ruta de foto
             $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
             unlink($image_path);
+
+            $foto = Foto::find($borrar->foto_id);//obtengo el id de la foto para borrar la ruta
+            $foto->delete();
         }
+
         $borrar->delete();// lo borramos
 
         // Tras esto redireccionamos
