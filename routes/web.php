@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,17 +29,17 @@ Route::get('/', function () {
 });
 
 
-Route::get('/telefonia' , function(){
-	return view ('telefonia');
-});
+Route::get('/telefonia/{c}' , 'HomeController@categoria'); //pasamos por parametro la variable c (categoria) y llamamos al metodo categoria
  
 Route::resource('admin/productos', 'AdminProductosController');
+
+Route::resource('/home', 'HomeController');
 
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 /*Route::get('/passwords/mail', 'ForgotPasswordController@sendResetLinkEmail');*/
 

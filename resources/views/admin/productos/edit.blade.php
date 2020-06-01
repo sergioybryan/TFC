@@ -32,7 +32,7 @@
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#595959', GradientType=1 );
 			}
 			body{
-				background-image:url("../images/fondos/fondo_6.gif");
+				background-image:url("../../images/fondos/fondo_6.gif");
 				/*background-repeat: no-repeat; */
 			}
 

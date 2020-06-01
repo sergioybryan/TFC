@@ -164,8 +164,8 @@
 <!-----------------------  C A B E C E R A ------------------------------->
 		
 		<div class=" row align-items-center justify-content-center no-gutters ">
-			 @foreach($Productos as $producto)
-				@if ($producto->Categoria=='telefonia')
+			 @foreach($Producto as $producto)
+				@if ($producto->Categoria==$categoria)
 				<div class=" col-md-2 ">
 					<div class="card tarjeta" style="width: 18rem;">
 						  <img class="card-img-top" src="../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" alt="roomba">
