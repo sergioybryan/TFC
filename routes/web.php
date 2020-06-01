@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +33,7 @@ Route::get('/telefonia/{c}' , 'HomeController@categoria'); //pasamos por paramet
  
 Route::resource('admin/productos', 'AdminProductosController');
 
-Route::resource('/home', 'HomeController')->name('home');
+Route::resource('/home', 'HomeController');
 
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
 
