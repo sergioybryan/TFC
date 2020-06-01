@@ -277,7 +277,7 @@
 							  <a href="#" class="list-group-item encabezado list-group-item-action active">
 								CATEGORÍAS
 							  </a>
-							  <a href="#" class="list-group-item lista list-group-item-action">Telefonía</a>
+							  <a href="{{url('/telefonia')}}" class="list-group-item lista list-group-item-action">Telefonía</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Informática</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Imagen y Sonido</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Videojuegos</a>
