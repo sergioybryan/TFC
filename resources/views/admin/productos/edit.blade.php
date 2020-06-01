@@ -32,7 +32,7 @@
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#595959', GradientType=1 );
 			}
 			body{
-				background-image:url("../images/fondos/fondo_6.gif");
+				background-image:url("../../images/fondos/fondo_6.gif");
 				/*background-repeat: no-repeat; */
 			}
 
@@ -107,11 +107,9 @@
                 
                     <div class="form-group">
                     {!! Form::label('Categoria', 'Categoria:') !!}
-<<<<<<< HEAD
+
                     {!!Form::select('Categoria', ['informatica' => 'Informatica', 'videojuegos' => 'Videojuegos', 'telefonia' => 'Telefonia',  'imagen y sonido' => 'Imagen y Sonido', 'hogar' => 'Hogar'], $producto->Categoria, ['class'=>'form-control'])!!}
-=======
-                    {!!Form::select('Categoria', ['Informatica' => 'Informatica', 'Videojuegos' => 'Videojuegos', 'Telefonia' => 'Telefonia', 'Hogar' => 'Hogar', "Imagen y Sonido" => "Imagen y Sonido"], $producto->Categoria, ['class'=>'form-control'])!!}
->>>>>>> 1ce8c1a9752078d001dfd850eec0f0b00e9f19ca
+
                     </div>
                 
                     

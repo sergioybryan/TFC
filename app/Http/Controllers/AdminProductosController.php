@@ -87,8 +87,7 @@ class AdminProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
-    {
+    public function update(Request $request,$id){
         $newP=Producto::find($id); //busco el id en la BD
         $newP->Nombre=$request->input('Nombre'); //sustituyo por los nuevos valores
         $newP->Categoria=$request->input('Categoria');
@@ -100,46 +99,20 @@ class AdminProductosController extends Controller
               //borro la foto antigua de la carpeta imagenes
             if( isset($newP->foto->ruta_foto) ){ //si existe la ruta
 
-            if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
-                $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
-                unlink($image_path);//elimino
-            }
-<<<<<<< HEAD
-			else {
-				//guardo una nueva imagen en la carpeta imagen
-				$nombre= $archivo->getClientOriginalName(); //obtengo el nombre
-				$archivo->move("images/images_product/",$nombre);//creo una nueva en la carpeta imagenes
-				$foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
-				$foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
-				$foto->save();// guardo
-			}
-=======
-
-            //guardo una nueva imagen en la carpeta imagen
-            $nombre= $archivo->getClientOriginalName(); //obtengo el nombre
-            $archivo->move("images/images_product/",$nombre);//creo una nueva en la carpeta imagenes
-            $foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
-            $foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
-            $foto->save();// guardo
-        }
-
-        else{
-
-            $nombre= $archivo->getClientOriginalName();
-            $archivo->move("images/images_product/",$nombre);
-            $foto=Foto::create(["ruta_foto"=>$nombre]); //creo una ruta de la foto
-            $newP->foto_id=$foto->id; // le doy al campo el valor de $foto->foto_id
-
-        }
-            
-
-            
-
-            
-            
->>>>>>> 1ce8c1a9752078d001dfd850eec0f0b00e9f19ca
+				if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
+					$image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
+					unlink($image_path);//elimino
+				}else {
+					//guardo una nueva imagen en la carpeta imagen
+					$nombre= $archivo->getClientOriginalName(); //obtengo el nombre
+					$archivo->move("images/images_product/",$nombre);//creo una nueva en la carpeta imagenes
+					$foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
+					$foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
+					$foto->save();// guardo
+				}
           
-        }
+        	}
+		}
     
         $newP->save(); //guardo
 
@@ -153,14 +126,13 @@ class AdminProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function confirmDestroy($id,$nombre)
-    {
+    public function confirmDestroy($id,$nombre) {
         
         $producto=Producto::find($id);
         return view('admin.productos.destroy',compact('id','nombre','producto')); //le paso a la ruta la info
       
 
-        }
+    }
     
 
     public function destroy($id)
