@@ -94,9 +94,12 @@ class AdminProductosController extends Controller
         $newP->Categoria=$request->input('Categoria');
         $newP->Precio=$request->input('Precio');
         $newP->Descripcion=$request->input('Descripcion');
+        $newP->Stock=$request->input('Stock');
         if ($archivo=$request->file("foto_id")){ //si hay foto
 
               //borro la foto antigua de la carpeta imagenes
+            if( isset($newP->foto->ruta_foto) ){ //si existe la ruta
+
             if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
                 $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
                 unlink($image_path);//elimino
@@ -108,7 +111,22 @@ class AdminProductosController extends Controller
             $foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
             $foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
             $foto->save();// guardo
+        }
 
+        else{
+
+            $nombre= $archivo->getClientOriginalName();
+            $archivo->move("images/images_product/",$nombre);
+            $foto=Foto::create(["ruta_foto"=>$nombre]); //creo una ruta de la foto
+            $newP->foto_id=$foto->id; // le doy al campo el valor de $foto->foto_id
+
+        }
+            
+
+            
+
+            
+            
           
         }
         

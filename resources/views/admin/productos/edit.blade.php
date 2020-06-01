@@ -107,7 +107,7 @@
                 
                     <div class="form-group">
                     {!! Form::label('Categoria', 'Categoria:') !!}
-                    {!!Form::select('Categoria', ['E' => 'Electronica', 'I' => 'Informatica', 'V' => 'Videojuegos', 'T' => 'Telefonia', 'H' => 'Hogar'], $producto->Categoria, ['class'=>'form-control'])!!}
+                    {!!Form::select('Categoria', ['Informatica' => 'Informatica', 'Videojuegos' => 'Videojuegos', 'Telefonia' => 'Telefonia', 'Hogar' => 'Hogar', "Imagen y Sonido" => "Imagen y Sonido"], $producto->Categoria, ['class'=>'form-control'])!!}
                     </div>
                 
                     
@@ -128,7 +128,7 @@
                     
                     <div class="form-group">
                     {!! Form::label('Foto', 'Foto:') !!}
-                    <img src="../../../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
+                    <img src="../../../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : "none" }}" width="100"> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
                     {!!Form::file('foto_id')!!}
                     </div>
                     
