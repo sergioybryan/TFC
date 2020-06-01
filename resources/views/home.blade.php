@@ -277,11 +277,7 @@
 							  <a href="#" class="list-group-item encabezado list-group-item-action active">
 								CATEGORÍAS
 							  </a>
-<<<<<<< HEAD
-							  <a href="{{url('/telefonia')}}" class="list-group-item lista list-group-item-action">Telefonía</a>
-=======
-							  <a href="{{ url('/telefonia') }}" class="list-group-item lista list-group-item-action">Telefonía</a>
->>>>>>> 9df7a5ef1f72380fa610831b9168e172ff5ba3dd
+							  <a href="{{ url('/telefonia/T') }}" class="list-group-item lista list-group-item-action">Telefonía</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Informática</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Imagen y Sonido</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Videojuegos</a>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,19 +28,12 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-<<<<<<< HEAD
-Route::get('/telefonia' , function(){
-    return view ('telefonia');
-});
-
-=======
 
 Route::get('/telefonia/{c}' , 'HomeController@categoria'); //pasamos por parametro la variable c (categoria) y llamamos al metodo categoria
  
->>>>>>> 9df7a5ef1f72380fa610831b9168e172ff5ba3dd
 Route::resource('admin/productos', 'AdminProductosController');
 
-Route::resource('/home', 'HomeController')->name('home');
+Route::resource('/home', 'HomeController');
 
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
 
