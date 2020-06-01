@@ -247,9 +247,9 @@
 							<ul class="navi">
 								<li><a class="nav-link neon categoria" href="#">Categorías</a>
 									<ul>
-										<li><a class="submenu" href="#">Telefonía </a></li>
-										<li><a class="submenu" href="#">Informática </a></li>
-										<li><a class="submenu" href="#">Imagen y Sonido</a></li>
+										<li><a class="submenu" href="{{ url('/telefonia/T') }}">Telefonía </a></li>
+										<li><a class="submenu" href="{{ url('/informatica/I') }}">Informática </a></li>
+										<li><a class="submenu" href="{{ url('/imagen/S') }}">Imagen y Sonido</a></li>
 										<li><a class="submenu" href="#">Videojuegos</a></li>
 										<li><a class="submenu" href="#">Hogar</a></li>
 									</ul>
@@ -278,8 +278,8 @@
 								CATEGORÍAS
 							  </a>
 							  <a href="{{ url('/telefonia/T') }}" class="list-group-item lista list-group-item-action">Telefonía</a>
-							  <a href="#" class="list-group-item lista list-group-item-action">Informática</a>
-							  <a href="#" class="list-group-item lista list-group-item-action">Imagen y Sonido</a>
+							  <a href="{{ url('/informatica/I') }}" class="list-group-item lista list-group-item-action">Informática</a>
+							  <a href="{{ url('/imagen/S') }}" class="list-group-item lista list-group-item-action">Imagen y Sonido</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Videojuegos</a>
 							  <a href="#" class="list-group-item lista list-group-item-action">Hogar</a>
 							</div>

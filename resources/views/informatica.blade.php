@@ -189,7 +189,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<h3 class="home neon">Telefonía</h3>
+				<h3 class="home neon">Informatica</h3>
 				<div class="collapse navbar-collapse" id="menu">
 					<nav class="navbar-nav">
 						<ul class="navi">
@@ -214,7 +214,7 @@
 					<input class="form-control form-control-sm mr-md-2" type="search" placeholder="Buscar" />
 					<input class="btn buscar bg-primary" type="submit" value="Buscar">
 				</form>
-			</nav
+			</nav>
 		</div>
 
 		

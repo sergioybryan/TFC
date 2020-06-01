@@ -35,25 +35,29 @@ class HomeController extends Controller
         switch($c) {
             case 'V':
                 $categoria="Videojuegos";// 
-        
+                $ruta="videojuegos";
               break;
             case "I":
-            $categoria="Informatica";// 
+            $categoria="Informatica";
+            $ruta="informatica";// 
               break;
-            case "E":
-            $categoria="Electronica";// 
+            case "S":
+            $categoria="Imagen y Sonido";
+            $ruta="imagen";// 
               break;
 
             case "H":
                 $categoria="Hogar";// 
+                $ruta="hogar";
               break;
             case "T":
-            $categoria="Telefonia";// 
+            $categoria="Telefonia";
+            $ruta="telefonia";// 
               break;
  
           }
        
-        return view('telefonia',compact('Producto','categoria')); //le paso a la ruta al id
+        return view($ruta, compact('Producto','categoria')); //le paso a la ruta al id
       
 
         }

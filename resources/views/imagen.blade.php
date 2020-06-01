@@ -189,7 +189,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<h3 class="home neon">Telefonía</h3>
+				<h3 class="home neon">Imagen y Sonido</h3>
 				<div class="collapse navbar-collapse" id="menu">
 					<nav class="navbar-nav">
 						<ul class="navi">

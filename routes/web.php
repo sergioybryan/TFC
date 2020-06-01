@@ -30,7 +30,15 @@ Route::get('/', function () {
 
 
 Route::get('/telefonia/{c}' , 'HomeController@categoria'); //pasamos por parametro la variable c (categoria) y llamamos al metodo categoria
- 
+
+Route::get('/informatica/{c}' , 'HomeController@categoria');
+
+Route::get('/imagen/{c}' , 'HomeController@categoria');
+
+Route::get('/videojuegos/{c}' , 'HomeController@categoria');
+
+Route::get('/hogar/{c}' , 'HomeController@categoria');
+
 Route::resource('admin/productos', 'AdminProductosController');
 
 Route::resource('/home', 'HomeController');
