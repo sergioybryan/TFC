@@ -100,31 +100,29 @@ class AdminProductosController extends Controller
               //borro la foto antigua de la carpeta imagenes
             if( isset($newP->foto->ruta_foto) ){ //si existe la ruta
 
-				if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
-					$image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
-					unlink($image_path);//elimino
-				}
-				else {
-					//guardo una nueva imagen en la carpeta imagen
-					$nombre= $archivo->getClientOriginalName(); //obtengo el nombre
-					$archivo->move("images/images_product/",$nombre);//creo una nueva en la carpeta imagenes
-					$foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
-					$foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
-					$foto->save();// guardo
-				}
-			}
+                if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
+                    $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
+                    unlink($image_path);//elimino
+                }
 
-			else{
+            //guardo una nueva imagen en la carpeta imagen
+            $nombre= $archivo->getClientOriginalName(); //obtengo el nombre
+            $archivo->move("images/images_product/",$nombre);//creo una nueva en la carpeta imagenes
+            $foto=Foto::find($newP->foto_id); //busco el id de la foto para reemplazarlo
+            $foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
+            $foto->save();// guardo
+            }
 
-				$nombre= $archivo->getClientOriginalName();
-				$archivo->move("images/images_product/",$nombre);
-				$foto=Foto::create(["ruta_foto"=>$nombre]); //creo una ruta de la foto
-				$newP->foto_id=$foto->id; // le doy al campo el valor de $foto->foto_id
+            else{
 
-			}      
-          
+                $nombre= $archivo->getClientOriginalName();
+                $archivo->move("images/images_product/",$nombre);
+                $foto=Foto::create(["ruta_foto"=>$nombre]); //creo una ruta de la foto
+                $newP->foto_id=$foto->id; // le doy al campo el valor de $foto->foto_id
+
+            } 
         }
-    
+        
         $newP->save(); //guardo
 
         return redirect('/admin/productos'); //envia a la pagina del admi
@@ -177,5 +175,6 @@ class AdminProductosController extends Controller
       
 
         }
+        
     
 }
