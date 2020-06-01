@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Http\Controllers\Auth;
 
 class LoginController extends Controller
 {
@@ -20,12 +21,16 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+	
+	public function authenticated($request , $user){
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
+		if($user->rol_id==1){
+			return redirect('/admin/productos') ;
+		}else{
+			return redirect('/home') ;
+		}
+	}
+
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
@@ -37,4 +42,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+	
 }

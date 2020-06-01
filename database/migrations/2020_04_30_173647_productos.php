@@ -20,6 +20,7 @@ class Productos extends Migration
             $table->decimal('Precio',5,2);
             $table->string('Descripcion');
             $table->integer('Stock');
+			$table->string('foto_id');
             $table->timestamps();
         });
     }

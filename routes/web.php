@@ -14,20 +14,37 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	
+/*	if (Auth::check()){
+		$user=Auth::user();
+		echo $user;
+		if ($user->rol_id==2){
+			return redirect('/home');
+		} else return redirect('/admin/productos'); 
+	}*/
+
+	return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/telefonia' , function(){
     return view ('telefonia');
 });
 
+=======
+
+Route::get('/telefonia/{c}' , 'HomeController@categoria'); //pasamos por parametro la variable c (categoria) y llamamos al metodo categoria
+ 
+>>>>>>> 9df7a5ef1f72380fa610831b9168e172ff5ba3dd
 Route::resource('admin/productos', 'AdminProductosController');
+
+Route::resource('/home', 'HomeController')->name('home');
 
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 /*Route::get('/passwords/mail', 'ForgotPasswordController@sendResetLinkEmail');*/
 
