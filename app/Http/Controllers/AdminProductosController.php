@@ -104,7 +104,6 @@ class AdminProductosController extends Controller
                 $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
                 unlink($image_path);//elimino
             }
-<<<<<<< HEAD
 			else {
 				//guardo una nueva imagen en la carpeta imagen
 				$nombre= $archivo->getClientOriginalName(); //obtengo el nombre
@@ -113,7 +112,6 @@ class AdminProductosController extends Controller
 				$foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
 				$foto->save();// guardo
 			}
-=======
 
             //guardo una nueva imagen en la carpeta imagen
             $nombre= $archivo->getClientOriginalName(); //obtengo el nombre
@@ -137,7 +135,6 @@ class AdminProductosController extends Controller
 
             
             
->>>>>>> 1ce8c1a9752078d001dfd850eec0f0b00e9f19ca
           
         }
     
