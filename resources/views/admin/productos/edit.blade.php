@@ -107,7 +107,7 @@
                 
                     <div class="form-group">
                     {!! Form::label('Categoria', 'Categoria:') !!}
-                    {!!Form::select('Categoria', ['E' => 'Electronica', 'I' => 'Informatica', 'V' => 'Videojuegos', 'T' => 'Telefonia', 'H' => 'Hogar'], $producto->Categoria, ['class'=>'form-control'])!!}
+                    {!!Form::select('Categoria', ['informatica' => 'Informatica', 'videojuegos' => 'Videojuegos', 'telefonia' => 'Telefonia',  'imagen y sonido' => 'Imagen y Sonido', 'hogar' => 'Hogar'], $producto->Categoria, ['class'=>'form-control'])!!}
                     </div>
                 
                     

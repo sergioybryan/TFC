@@ -23,7 +23,6 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 	
 	public function authenticated($request , $user){
-		$user=Auth::user();
 		if($user->rol_id==1){
 			return redirect('/admin/productos') ;
 		}else{

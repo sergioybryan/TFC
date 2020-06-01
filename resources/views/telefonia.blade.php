@@ -163,10 +163,21 @@
 		</div>
 <!-----------------------  C A B E C E R A ------------------------------->
 		
-		<div class=" row align-items-center justify-content-center no-gutters ">	
-			<div class=" col-md-2 ">
-				
-			</div>
+		<div class=" row align-items-center justify-content-center no-gutters ">
+			 @foreach($Productos as $producto)
+				@if ($producto->Categoria=='telefonia')
+				<div class=" col-md-2 ">
+					<div class="card tarjeta" style="width: 18rem;">
+						  <img class="card-img-top" src="../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" alt="roomba">
+						  <div class="card-body">
+							<h5 class="card-title rosa">{{$producto->Nombre}}</h5>
+							<p class="card-text rosa"> {{$producto->Descripcion}}</p>
+							<a href="#" class="btn btn-primary">Al Carrito!</a>
+						  </div>
+					</div>
+				</div>
+				@endif
+			@endforeach
 		</div>
 	</div>	
 </body>
