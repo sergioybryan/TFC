@@ -41,7 +41,7 @@ class HomeController extends Controller
             case "E":
             $categoria="Electronica";// 
               break;
-            
+
             case "H":
                 $categoria="Hogar";// 
               break;
