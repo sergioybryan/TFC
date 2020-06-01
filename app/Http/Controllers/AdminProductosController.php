@@ -87,7 +87,8 @@ class AdminProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id){
+    public function update(Request $request,$id)
+    {
         $newP=Producto::find($id); //busco el id en la BD
         $newP->Nombre=$request->input('Nombre'); //sustituyo por los nuevos valores
         $newP->Categoria=$request->input('Categoria');
@@ -102,7 +103,8 @@ class AdminProductosController extends Controller
 				if($nombre= $newP->foto->ruta_foto){ //si el producto tiene ruta de foto
 					$image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
 					unlink($image_path);//elimino
-				}else {
+				}
+				else {
 					//guardo una nueva imagen en la carpeta imagen
 					$nombre= $archivo->getClientOriginalName(); //obtengo el nombre
 					$archivo->move("images/images_product/",$nombre);//creo una nueva en la carpeta imagenes
@@ -110,9 +112,18 @@ class AdminProductosController extends Controller
 					$foto->ruta_foto=$nombre; //reemplazo la ruta_foto por la nueva ruta.
 					$foto->save();// guardo
 				}
+			}
+
+			else{
+
+				$nombre= $archivo->getClientOriginalName();
+				$archivo->move("images/images_product/",$nombre);
+				$foto=Foto::create(["ruta_foto"=>$nombre]); //creo una ruta de la foto
+				$newP->foto_id=$foto->id; // le doy al campo el valor de $foto->foto_id
+
+			}      
           
-        	}
-		}
+        }
     
         $newP->save(); //guardo
 
@@ -126,13 +137,14 @@ class AdminProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function confirmDestroy($id,$nombre) {
+    public function confirmDestroy($id,$nombre)
+    {
         
         $producto=Producto::find($id);
         return view('admin.productos.destroy',compact('id','nombre','producto')); //le paso a la ruta la info
       
 
-    }
+        }
     
 
     public function destroy($id)
