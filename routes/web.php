@@ -15,24 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 	
-/*	if (Auth::check()){*/
+/*	if (Auth::check()){
 		$user=Auth::user();
-		//echo $user;
+		echo $user;
 		if ($user->rol_id==2){
-			return view ('/home');
-		} else return view ('/admin/productos/index2'); //esta rutaa esta fallandoooooo
-	/*}*/
-	/*if (Auth::check()){
-        if ($user->esAdmin()){
-            echo "Eres usuario administrador.";
-		} else
-            echo "Eres estudiante.";
-		
+			return redirect('/home');
+		} else return redirect('/admin/productos'); 
 	}*/
+
 	return view('welcome');
 });
 
 
+Route::get('/telefonia' , function(){
+	return view ('telefonia');
+});
  
 Route::resource('admin/productos', 'AdminProductosController');
 
