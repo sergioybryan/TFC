@@ -250,13 +250,13 @@
 										<li><a class="submenu" href="{{ url('/telefonia/T') }}">Telefonía </a></li>
 										<li><a class="submenu" href="{{ url('/informatica/I') }}">Informática </a></li>
 										<li><a class="submenu" href="{{ url('/imagen/S') }}">Imagen y Sonido</a></li>
-										<li><a class="submenu" href="#">Videojuegos</a></li>
-										<li><a class="submenu" href="#">Hogar</a></li>
+										<li><a class="submenu" href="{{ url('/videojuegos/V') }}">Videojuegos</a></li>
+										<li><a class="submenu" href="{{ url('/hogar/H') }}">Hogar</a></li>
 									</ul>
 								</li>
 							</ul>
 								<a class="nav-link neon link" href="#">Carro de Compra</a>
-								<a class="nav-link neon link" href="#">Contacto</a>
+								<a class="nav-link neon link" href="{{ url('/home') }}">Home</a>
 								<a class="nav-link neon link" href="#">Sobre Nosotros</a>
 							
 						</nav>
@@ -280,8 +280,8 @@
 							  <a href="{{ url('/telefonia/T') }}" class="list-group-item lista list-group-item-action">Telefonía</a>
 							  <a href="{{ url('/informatica/I') }}" class="list-group-item lista list-group-item-action">Informática</a>
 							  <a href="{{ url('/imagen/S') }}" class="list-group-item lista list-group-item-action">Imagen y Sonido</a>
-							  <a href="#" class="list-group-item lista list-group-item-action">Videojuegos</a>
-							  <a href="#" class="list-group-item lista list-group-item-action">Hogar</a>
+							  <a href="{{ url('/videojuegos/V') }}" class="list-group-item lista list-group-item-action">Videojuegos</a>
+							  <a href="{{ url('/hogar/H') }}" class="list-group-item lista list-group-item-action">Hogar</a>
 							</div>
 						</div>
 						<div class="col-md-1 contenido"></div>

@@ -198,13 +198,13 @@
 									<li><a class="submenu" href="{{ url('/telefonia/T') }}">Telefonía </a></li>
 									<li><a class="submenu" href="{{ url('/informatica/I') }}">Informática </a></li>
 									<li><a class="submenu" href="{{ url('/imagen/S') }}">Imagen y Sonido</a></li>
-									<li><a class="submenu" href="#">Videojuegos</a></li>
-									<li><a class="submenu" href="#">Hogar</a></li>
+									<li><a class="submenu" href="{{ url('/videojuegos/V') }}">Videojuegos</a></li>
+									<li><a class="submenu" href="{{ url('/hogar/H') }}">Hogar</a></li>
 								</ul>
 							</li>
 						</ul>
 							<a class="nav-link neon link" href="#">Carro de Compra</a>
-							<a class="nav-link neon link" href="#">Contacto</a>
+							<a class="nav-link neon link" href="{{ url('/home') }}">Home</a>
 							<a class="nav-link neon link" href="#">Sobre Nosotros</a>
 							
 					</nav>
@@ -214,7 +214,7 @@
 					<input class="form-control form-control-sm mr-md-2" type="search" placeholder="Buscar" />
 					<input class="btn buscar bg-primary" type="submit" value="Buscar">
 				</form>
-			</nav
+			</nav>
 		</div>
 
 		
@@ -239,7 +239,7 @@
 			@endforeach
 		</div>
 
-		<div class="row mt-5">
+		<div class="row mt-5 mb-5">
 			<div class="col-md-12"></div>
 		</div>
 <!-------------------------- P I E   D E   P A G I N A ---------------------------->

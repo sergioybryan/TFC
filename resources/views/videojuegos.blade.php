@@ -189,7 +189,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<h3 class="home neon">Imagen y Sonido</h3>
+				<h3 class="home neon">Videojuegos</h3>
 				<div class="collapse navbar-collapse" id="menu">
 					<nav class="navbar-nav">
 						<ul class="navi">
@@ -199,7 +199,7 @@
 									<li><a class="submenu" href="{{ url('/informatica/I') }}">Informática </a></li>
 									<li><a class="submenu" href="{{ url('/imagen/S') }}">Imagen y Sonido</a></li>
 									<li><a class="submenu" href="{{ url('/videojuegos/V') }}">Videojuegos</a></li>
-									<li><a class="submenu" href="#">Hogar</a></li>
+									<li><a class="submenu" href="{{ url('/hogar/H') }}">Hogar</a></li>
 								</ul>
 							</li>
 						</ul>
