@@ -83,6 +83,13 @@
 			<div class="col-lg-4 text-center titulo col-md-4">
 				<h1>Administrador</h1>
 			</div>
+
+			<div class="col-lg-4 text-center titulo col-md-4">
+			<a class="btn btn-danger" href="{{ url('/logout') }}">
+				Cerrar Sesion
+			</a> 
+			</div>
+
 		</div>
 		
 			<div class=" row align-items-center mb-5 justify-content-center ">	

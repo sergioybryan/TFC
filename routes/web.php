@@ -39,7 +39,7 @@ Route::get('/videojuegos/{c}' , 'HomeController@categoria');
 
 Route::get('/hogar/{c}' , 'HomeController@categoria');
 
-Route::resource('admin/productos', 'AdminProductosController');
+Route::resource('admin/productos', 'AdminProductosController')->middleware('auth');;//si no ha iniciado sesion te reenvia a la pagina de login
 
 Route::resource('/home', 'HomeController');
 
@@ -54,3 +54,6 @@ Auth::routes();
 Route::get('/passwords/email', function () {
     return view('email');
 });
+
+
+Route::get('logout', 'Auth\LoginController@logout');

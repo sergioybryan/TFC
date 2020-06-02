@@ -262,11 +262,23 @@
 						</nav>
 					</div>
 					<span class="logo neon"><p>Diversa Electronics</p></span>
+					<ul class="navi">
+						<li><a class="nav-link neon categoria" href="#">{{$usuario}}</a>
+							<ul>
+								<li><a class="submenu" href="#">Mi perfil </a></li>
+								<li><a class="submenu" href="#">Mis pedidos </a></li>
+								<li><a class="submenu" href="#">Carrito </a></li>
+								<li><a class="submenu btn btn-danger" href="{{ url('/logout') }}">Cerrar Sesion</a>  </li>
+							</ul>
+						</li>
+					</ul>
+					
 					<form class="form-inline">
 						<input class="form-control form-control-sm mr-md-2" type="search" placeholder="Buscar" />
 						<input class="btn buscar bg-primary" type="submit" value="Buscar">
 					</form>
-				</nav
+
+				</nav>
 			</div>	
 
 <!-- ---------------------- C O N T E N I D O   P R I N C I P A L --------------------------------->

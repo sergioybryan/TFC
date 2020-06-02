@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Producto;
 use App\Foto;
-
+use Auth;
 
 class AdminProductosController extends Controller
 {
@@ -17,9 +17,13 @@ class AdminProductosController extends Controller
      */
     public static function index()
     {
+        $usuario=Auth::user(); // obtengo el usuario que ha iniciado sesion
+        if($usuario->rol_id == 1 ){ //si es admi puede acceder
         $Productos=Producto::all();
         return view('admin.productos.index2', compact('Productos'));
     }
+    else echo "No puede acceder";
+}
 
     /**
      * Show the form for creating a new resource.

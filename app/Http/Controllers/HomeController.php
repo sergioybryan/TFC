@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Foto;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,11 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $usuario = Auth::user();
+        $usuario = $usuario->name;
+        return view('home',compact("usuario"));
     }
 
     public function categoria($c)
     {
+      $usuario = Auth::user();
+      $usuario = $usuario->name;
         
         $Producto = Producto::all(); //buscamos el id a borrar
         switch($c) {
@@ -57,7 +62,7 @@ class HomeController extends Controller
  
           }
        
-        return view($ruta, compact('Producto','categoria')); //le paso a la ruta al id
+        return view($ruta, compact('Producto','categoria',"usuario")); //le paso a la ruta al id
       
 
         }
