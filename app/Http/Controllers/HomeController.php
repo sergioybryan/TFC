@@ -26,8 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $usuario = Auth::user();
-        $usuario = $usuario->name;
+        $usuario = Auth::user(); // obtengo el usuario
+        $usuario = $usuario->name;// almaceno su nombre
         return view('home',compact("usuario"));
     }
 
