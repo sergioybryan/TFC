@@ -83,7 +83,7 @@
 	<div class="container-fluid">
     	<div class="row cabecera  pt-3">
 			<div class="col-md-3 justify-content-start mt-2 logo">
-				Diversa Electronics 
+				<a href="{{ route('welcome') }}">Diversa Electronics</a>
 				<img src="../public/images/copyleft.png" alt="copyleft">
 			</div>
 			<div class="col-md-5 offset-md-1 justify-content-center titulo">

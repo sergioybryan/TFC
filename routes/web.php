@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\User;
 
 
 
@@ -17,16 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 	
-/*	if (Auth::check()){
-		$user=Auth::user();
-		echo $user;
-		if ($user->rol_id==2){
-			return redirect('/home');
-		} else return redirect('/admin/productos'); 
-	}*/
+	$user = User::where('name','admin') -> first();
 
+	if ($user==null){
+   User::create([
+		'name' => "admin",
+		'email' => "admin@gmail.com",
+		'password' => Hash::make(12345678),
+		'rol_id' => 1,
+	]);
+	}
 	return view('welcome');
-});
+})->name("welcome");
 
 /*--------------- V I S T A S   P O R   C A T E G O R I A S ---------------------*/
 Route::get('/telefonia/{c}' , 'HomeController@categoria'); //pasamos por parametro la variable c (categoria) y llamamos al metodo categoria
@@ -45,6 +48,8 @@ Route::resource('admin/productos', 'AdminProductosController')->middleware('auth
 
 Route::resource('/home', 'HomeController');
 
+Route::get('inicio', 'HomeController@index')->name("home");
+
 Route::get('/admin/productos/destroy/{id}/{nombre}', 'AdminProductosController@confirmDestroy');
 
 Auth::routes();
@@ -59,5 +64,3 @@ Route::get('/passwords/email', function () {
 
 
 Route::get('logout', 'Auth\LoginController@logout');
-
-/* ----------- R U T A S   D E L   C A R R I T O ----------------------*/

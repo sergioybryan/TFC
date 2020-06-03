@@ -68,6 +68,21 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'rol_id' => 2,
         ]);
+    }
+
+    protected function createAdmin()
+    {
+        $user = User::where('name','admin') -> first();
+
+        if ($user==null){
+       User::create([
+            'name' => "admin",
+            'email' => "admin@gmail.com",
+            'password' => Hash::make(12345678),
+            'rol_id' => 1,
+        ]);
+        }
     }
 }

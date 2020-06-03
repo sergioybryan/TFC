@@ -78,7 +78,7 @@
 		
 		<div class="row cabecera pt-3">
 			<div class="col-md-3 justify-content-start mt-2 logo">
-				Diversa Electronics
+				<a href="{{ route('welcome') }}">Diversa Electronics</a>
 				<img src="../public/images/copyleft.png" alt="copyleft">
 			</div>
 			<div class="col-md-5 offset-md-1 justify-content-center titulo">
@@ -124,7 +124,7 @@
 							</div>
 
 							<div class="form-group row mb-0">
-								<div class="col-md-8 offset-md-4">
+								<div class="col-md-12 text-center">
 									<button type="submit" class="btn btn-warning">
 										{{ __('Entrar') }}
 									</button>
@@ -136,8 +136,14 @@
 										</a>
 									@endif
 								</div>
+								<div class="col-md-12 mt-3 text-center">
+									<p>¿Aun no te has registrado?</p>
+									<a class="btn btn-danger " href="{{ route('register') }}">Registrate</a>
+									
+								</div>
 							</div>
 						</form>
+						
 					</div>
 				</div>
 			<div class="row  footer mt-5">
