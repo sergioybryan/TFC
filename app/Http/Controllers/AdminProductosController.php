@@ -153,7 +153,9 @@ class AdminProductosController extends Controller
     {
         
         $borrar = Producto::find($id); //buscamos el id a borrar
-        if($nombre= $borrar->foto->ruta_foto){ //si el producto tiene ruta de foto
+        
+        if(isset( $borrar->foto->ruta_foto)){ //si el producto tiene ruta de foto
+            $nombre= $borrar->foto->ruta_foto;
             $image_path = public_path().'/images/images_product/'.$nombre;// public path, nos da la ruta de  public
             unlink($image_path);
 

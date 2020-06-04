@@ -19,7 +19,7 @@ INSERT INTO `productos` (`Nombre`, `Categoria`, `Precio`, `Descripcion`, `Stock`
 ('HP Pavilion Notebook', 'Informatica', 1098.99, 'Portatil HP Pavilion', 15),
 ('Samsung Pro SSD', 'Informatica', 299.00, 'SSD SamSung', 32),
 ('Seagate Barracuda', 'Informatica', 128.80, 'SSD Seagate', 42),
-('Home Cinema Sony BDV', 'imagen y sonido', 899.99, 'Home Cinema Sony', 12),
+('Home Cinema Sony BDV', 'Imagen y Sonido', 899.99, 'Home Cinema Sony', 12),
 ('Sistema 5.1 Logitech z506', 'Imagen y Sonido', 525.00, 'Sistema de sonido', 23),
 ('Focusrite', 'Imagen y Sonido', 159.00, 'tarjeta de sonido Focusrite', 10),
 ('Universal Audio Apollo TWD', 'Imagen y Sonido', 899.00, 'Tarjeta de sonido', 17),
