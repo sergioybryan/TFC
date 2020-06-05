@@ -47,6 +47,8 @@ class LoginController extends Controller
 
     public function logout() {
         Auth::logout();
+
+        \Session::forget('cart'); //Eliminamos la sesion del carrito al hacer logout.
         return redirect('/login');
       }
 

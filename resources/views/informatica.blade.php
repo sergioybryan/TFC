@@ -209,7 +209,7 @@
 							
 					</nav>
 				</div>
-				<span class="logo neon"><a href="{{ route('home') }}">Diversa Electronics</a></span>
+				<span class="logo neon"><a class="logo neon" href="{{ route('home') }}">Diversa Electronics</a></span>
 				<ul class="navi">
 					<li><a class="nav-link neon categoria" href="#">{{$usuario}}</a>
 						<ul>

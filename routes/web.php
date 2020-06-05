@@ -64,3 +64,23 @@ Route::get('/passwords/email', function () {
 
 
 Route::get('logout', 'Auth\LoginController@logout');
+
+/*------ Prueba carrito --------------------------*/
+
+
+
+Route::get('cart/show', [
+	'as' => 'cart-show',
+	'uses' => 'CartController@show'
+
+]);
+
+Route::get('cart/add/{producto}', [
+	'as' => 'cart-add',
+    'uses' => 'CartController@add'
+  ]);
+
+  Route::get('cart/delete/{producto}', [
+	'as' => 'cart-delete',
+    'uses' => 'CartController@delete'
+  ]);

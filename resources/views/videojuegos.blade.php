@@ -209,7 +209,7 @@
 							
 					</nav>
 				</div>
-				<span class="logo neon"><a href="{{ route('home') }}">Diversa Electronics</a></span>
+				<span class="logo neon"><a class="logo neon" href="{{ route('home') }}">Diversa Electronics</a></span>
 				<ul class="navi">
 					<li><a class="nav-link neon categoria" href="#">{{$usuario}}</a>
 						<ul>
@@ -228,7 +228,7 @@
 		</div>
 
 		
-<!-----------------------  C A B E C E R A ------------------------------->
+<!-----------------------f i n  C A B E C E R A ------------------------------->
 		
 		<div class=" row align-items-center cuerpo justify-content-center no-gutters ">
 			
@@ -238,10 +238,14 @@
 					<div class="card contenido tarjeta" style="width: 18rem;">
 						  <img class="card-img-top" src="../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" alt="roomba">
 						  <div class="card-body">
+							<!------ PRUEBA ------------------------>
+						
 							<h5 class="card-title rosa">{{$producto->Nombre}}</h5>
 							<p class="card-text rosa"> {{$producto->Descripcion}}</p>
 							<p class="card-text precio"> {{$producto->Precio}} €</p>
-							<a href="#" class="btn btn-primary">Al Carrito!</a>
+							<a href="{{ action('CartController@add', [$producto->id]) }}" class="btn btn-primary">Al Carrito!</a>
+							
+						
 						  </div>
 					</div>
 				</div>
