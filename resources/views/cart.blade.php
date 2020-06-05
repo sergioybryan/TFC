@@ -298,14 +298,16 @@
                            
                                 <th>Cantidad:</th>
                                 <th>Subtotal:</th>
-                                <th>Quitar</th>
+                                <th></th>
                                 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($cart as $product=>$producto)
+							@foreach ($cart as $contenido)
+							
+								@foreach ($contenido as $producto)
                             <tr>
-                               
+								<td><img src="../images/images_product/{{$producto->foto ? $producto->foto->ruta_foto : '-' }}" width="100"> </td> <!-- si el producto tiene foto, entonces la carga, si no '-' -->
                                 <td>{{ $producto->Nombre }}</td>
                                 <td>{{ $producto->Categoria }}</td>
                                 <td>${{ number_format($producto->Precio,2) }}</td>
@@ -316,7 +318,9 @@
                                         <i class="fa fa-remove"></i>
                                     </a>
                                 </td>
-                            </tr>
+							</tr>
+								@endforeach
+
                             @endforeach
                         </tbody>
                     </table>

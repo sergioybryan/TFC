@@ -24,10 +24,12 @@ class CartController extends Controller
         $user = Auth::user();
         $user = $user->name;
 
-        $cart = \Session::get('cart.'.$user);
+        $cart = \Session::get('cart.'.$user); //obtengo la sesion producto.user
+
+        //dd($cart);
         
         //return \Session::get('cart');
-        return view('cart', compact('cart.'));
+        return view('cart', compact('cart'));
       
     }
     
@@ -40,8 +42,8 @@ class CartController extends Controller
       $producto2=Producto::find($producto);
       $producto2->Cantidad= 1;
       
-      if (isset ($producto2->foto->ruta_foto)){
-        $producto2->foto_id=$producto2->foto->ruta_foto;
+      if (isset ($producto2->foto->ruta_foto)){ //si el producto tiene una foto
+        $producto2->foto_id=$producto2->foto->ruta_foto; //almaceno en la variable foto la ruta_foto
       }
     
       $cart= $producto2;
@@ -56,9 +58,10 @@ class CartController extends Controller
     public function delete($id){
         $user = Auth::user();
         $user = $user->name;
-        $cart = \Session::get('cart.'.$user);
-        unset($cart[$id]);
         
+        Session::forget('cart.'.$user.".".$id); //borra el producto del carrito
+
+        //return \Session::get('cart');
         
         return redirect()->route('cart-show');
 
