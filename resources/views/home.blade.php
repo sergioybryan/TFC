@@ -267,7 +267,7 @@
 							<ul>
 								<li><a class="submenu" href="#">Mi perfil </a></li>
 								<li><a class="submenu" href="#">Mis pedidos </a></li>
-								<li><a class="submenu" href="#">Carrito </a></li>
+								<li><a class="submenu" href="{{action('CartController@show')}}">Carrito </a></li>
 								<li><a class="submenu btn btn-danger" href="{{ url('/logout') }}">Cerrar Sesion</a>  </li>
 							</ul>
 						</li>
