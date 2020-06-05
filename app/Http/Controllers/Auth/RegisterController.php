@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -79,6 +81,17 @@ class RegisterController extends Controller
         $newP->email=$request->input('Email');
         //$newP->password=$request->input('Contraseña');
         $newP->save();
+        dd($newP->email);
+
+        $usuario = Auth::user(); // obtengo el usuario
+        //$usuario = $usuario->name;// almaceno su nombre
+        $usuario= $usuario->id;
+        $usuario=User::find($usuario);
+        $nombre=$usuario->name;
+        $email=$usuario->email;
+        $contra=$usuario->password;
+        $id=$usuario->id;
+        return view('admin.users.perfil',compact("nombre","email","contra","id"));
     }
 
     protected function createAdmin()

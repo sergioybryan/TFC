@@ -88,7 +88,7 @@ Route::get('cart/add/{producto}', [
   /*------------------------PERFIL DE USUARIO--------------- */
   Route::get('/perfil' , 'HomeController@perfil');
 
-  Route::get('/user/update/{id}' , 'Auth\RegisterController@update');
+  Route::put('/user/update/{id}' , 'Auth\RegisterController@update');
 
 
   
