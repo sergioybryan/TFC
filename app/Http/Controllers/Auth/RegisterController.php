@@ -72,6 +72,15 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function update(Request $request, $id)
+    {
+        $newP=User::find($id); //busco el id en la BD
+        $newP->name=$request->input('Nombre'); //sustituyo por los nuevos valores
+        $newP->email=$request->input('Email');
+        //$newP->password=$request->input('Contraseña');
+        $newP->save();
+    }
+
     protected function createAdmin()
     {
         $user = User::where('name','admin') -> first();

@@ -265,7 +265,7 @@
 					<ul class="navi">
 						<li><a class="nav-link neon categoria" href="#">{{$usuario}}</a>
 							<ul>
-								<li><a class="submenu" href="#">Mi perfil </a></li>
+								<li><a class="submenu" href="{{ url('/perfil') }}">Mi perfil </a></li>
 								<li><a class="submenu" href="#">Mis pedidos </a></li>
 								<li><a class="submenu" href="{{action('CartController@show')}}">Carrito </a></li>
 								<li><a class="submenu btn btn-danger" href="{{ url('/logout') }}">Cerrar Sesion</a>  </li>

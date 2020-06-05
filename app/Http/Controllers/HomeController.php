@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Producto;
 use App\Foto;
 use Auth;
+use app\User;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,18 @@ class HomeController extends Controller
         $usuario = Auth::user(); // obtengo el usuario
         $usuario = $usuario->name;// almaceno su nombre
         return view('home',compact("usuario"));
+    }
+
+    public function perfil(){
+        $usuario = Auth::user(); // obtengo el usuario
+        //$usuario = $usuario->name;// almaceno su nombre
+        $usuario= $usuario->id;
+        $usuario=User::find($usuario);
+        $nombre=$usuario->name;
+        $email=$usuario->email;
+        $contra=$usuario->password;
+        $id=$usuario->id;
+        return view('admin.users.perfil',compact("nombre","email","contra","id"));
     }
 
     public function categoria($c)

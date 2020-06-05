@@ -303,6 +303,9 @@
                             </tr>
                         </thead>
                         <tbody>
+							@if ($cart!=null)
+								
+							
 							@foreach ($cart as $contenido)
 							
 								@foreach ($contenido as $producto)
@@ -321,7 +324,9 @@
 							</tr>
 								@endforeach
 
-                            @endforeach
+							@endforeach
+							
+							@endif
                         </tbody>
                     </table>
 				</div>

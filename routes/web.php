@@ -84,3 +84,11 @@ Route::get('cart/add/{producto}', [
 	'as' => 'cart-delete',
     'uses' => 'CartController@delete'
   ]);
+
+  /*------------------------PERFIL DE USUARIO--------------- */
+  Route::get('/perfil' , 'HomeController@perfil');
+
+  Route::get('/user/update/{id}' , 'Auth\RegisterController@update');
+
+
+  
